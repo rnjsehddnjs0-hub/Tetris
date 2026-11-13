@@ -1,0 +1,87 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #14141c;
+  color: #fff;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+}
+
+#game {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#board-wrap {
+  position: relative;
+  line-height: 0;
+}
+
+canvas { display: block; }
+
+/* 버튼 줄: 너비는 sketch.js에서 캔버스 너비에 맞춰 설정 */
+#controls {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  width: 300px;
+}
+
+#controls button {
+  height: 52px;
+  font-size: 24px;
+  border: 0;
+  border-radius: 8px;
+  background: #3a3a55;
+  color: #fff;
+  cursor: pointer;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#controls button:active,
+#controls button.pressed { background: #6a6aa0; }
+
+#controls button:focus-visible,
+#restart:focus-visible { outline: 3px solid #ffd54a; outline-offset: 2px; }
+
+/* 게임 오버 화면 */
+#gameover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18% 8% 10%;
+  line-height: 1.4;
+  text-align: center;
+  background: rgba(10, 10, 20, 0.88);
+}
+
+#gameover.hidden { display: none; }
+#gameover h1 { margin: 0 0 12px; font-size: 28px; color: #ff6b6b; }
+#gameover p { margin: 6px 0; font-size: 18px; }
+#gameover strong { color: #ffd54a; font-size: 22px; }
+
+#restart {
+  margin-top: auto;
+  padding: 12px 36px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+#restart:hover { background: #5dc061; }

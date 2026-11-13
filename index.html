@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>테트리스</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+  <main id="game">
+    <div id="board-wrap">
+      <div id="canvas-holder"></div>
+
+      <!-- 게임 오버 화면 -->
+      <div id="gameover" class="hidden" role="dialog" aria-live="polite">
+        <h1>GAME OVER</h1>
+        <p>배치한 블록 수: <strong id="go-blocks">0</strong></p>
+        <p>없앤 가로줄 수: <strong id="go-lines">0</strong></p>
+        <button id="restart" type="button">재시작</button>
+      </div>
+    </div>
+
+    <!-- 화면 하단 벽 아래의 버튼 5개 -->
+    <div id="controls">
+      <button id="btn-ccw" type="button" aria-label="반시계 방향 회전">&#8634;</button>
+      <button id="btn-left" type="button" aria-label="왼쪽으로 이동">&#9664;</button>
+      <button id="btn-down" type="button" aria-label="누르는 동안 빠르게 낙하">&#9660;</button>
+      <button id="btn-right" type="button" aria-label="오른쪽으로 이동">&#9654;</button>
+      <button id="btn-cw" type="button" aria-label="시계 방향 회전">&#8635;</button>
+    </div>
+  </main>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
